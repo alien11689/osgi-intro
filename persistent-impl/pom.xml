@@ -87,6 +87,7 @@
                 <executions>
                     <execution>
                         <goals>
+                            <goal>add-resource-dir</goal>
                             <goal>blueprint-generate</goal>
                         </goals>
                     </execution>
