@@ -4,14 +4,14 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>org.github.alien11689.osgi.todo</groupId>
+    <groupId>org.github.alien11689.osgi.task</groupId>
     <artifactId>todo-pom</artifactId>
     <version>1.0.0-SNAPSHOT</version>
     <modules>
-        <module>todo-api</module>
+        <module>task-api</module>
         <module>fake-impl</module>
         <module>persistent-impl</module>
-        <module>rest</module>
+        <module>rest-impl</module>
     </modules>
     <packaging>pom</packaging>
 

@@ -1,0 +1,18 @@
+<features name="tasks" xmlns="http://karaf.apache.org/xmlns/features/v1.3.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://karaf.apache.org/xmlns/features/v1.3.0 http://karaf.apache.org/xmlns/features/v1.3.0">
+    <repository>mvn:org.apache.cxf.karaf/apache-cxf/3.1.9/xml/features</repository>
+
+    <feature name="task-deps">
+        <feature>transaction</feature>
+        <feature>cxf</feature>
+        <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.commons-dbcp/1.4_3</bundle>
+        <bundle>mvn:commons-pool/commons-pool/1.5.4</bundle>
+        <bundle>wrap:mvn:postgresql/postgresql/9.1-901-1.jdbc4</bundle>
+        <bundle>mvn:org.codehaus.groovy/groovy-all/2.4.7</bundle>
+
+        <config name="org.github.alien11689.osgi.task.persistentimpl">
+            db.user=postgres
+            db.password=admin
+            db.url=jdbc:postgresql://localhost:5432/task
+        </config>
+    </feature>
+</features>

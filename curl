@@ -1,1 +1,1 @@
-curl -XPOST -vvv "http://localhost:8181/cxf/tasks?name=my&description=Testowy2"
+curl -s -XPOST "http://localhost:8181/cxf/tasks?name=my2&description=Testowy2" | xmllint -format -
