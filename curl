@@ -1,0 +1,1 @@
+curl -XPOST -vvv "http://localhost:8181/cxf/tasks?name=my&description=Testowy2"
