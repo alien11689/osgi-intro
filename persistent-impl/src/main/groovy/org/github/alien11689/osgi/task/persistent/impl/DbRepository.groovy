@@ -2,7 +2,6 @@ package org.github.alien11689.osgi.task.persistent.impl
 
 import groovy.sql.GroovyRowResult
 import groovy.sql.Sql
-import groovy.transform.CompileStatic
 import org.github.alien11689.osgi.task.api.Task
 import org.github.alien11689.osgi.task.api.TaskRepository
 import org.github.alien11689.osgi.task.spi.CreateTask
@@ -19,7 +18,7 @@ import javax.sql.DataSource
         @Property(name = "type", value = "db"),
         @Property(name = "service.ranking", value = "100"),
 ])
-class DbRepository implements TaskRepository{
+class DbRepository implements TaskRepository {
 
     private final Sql sql
 

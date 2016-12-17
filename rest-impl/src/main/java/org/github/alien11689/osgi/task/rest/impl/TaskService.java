@@ -6,7 +6,11 @@ import org.github.alien11689.osgi.task.rest.impl.jaxb.Tasks;
 import org.ops4j.pax.cdi.api.OsgiService;
 
 import javax.inject.Singleton;
-import javax.ws.rs.*;
+import javax.ws.rs.GET;
+import javax.ws.rs.POST;
+import javax.ws.rs.Path;
+import javax.ws.rs.Produces;
+import javax.ws.rs.QueryParam;
 import java.util.stream.Collectors;
 
 @Path("/")
@@ -21,14 +25,14 @@ public class TaskService {
     }
 
     @GET
-    public Tasks getTasks(){
+    public Tasks getTasks() {
         Tasks tasks = new Tasks();
         tasks.setTasks(taskRepository.findAll().stream().map(Task::fromRepo).collect(Collectors.toList()));
         return tasks;
     }
 
     @POST
-    public Task addTask(@QueryParam("name") String name, @QueryParam("description") String description){
+    public Task addTask(@QueryParam("name") String name, @QueryParam("description") String description) {
         Task task = new Task();
         task.setDescription(description);
         task.setName(name);

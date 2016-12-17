@@ -7,7 +7,7 @@ create sequence tasks_ids;
 
 CREATE TABLE public.tasks
 (
-	id bigint primary key,
-	name varchar(256),
-	description varchar(256)
+    id bigint primary key,
+    name varchar(256),
+    description varchar(256)
 ) ;

@@ -1,9 +1,12 @@
-<features name="tasks" xmlns="http://karaf.apache.org/xmlns/features/v1.3.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://karaf.apache.org/xmlns/features/v1.3.0 http://karaf.apache.org/xmlns/features/v1.3.0">
+<features name="tasks" xmlns="http://karaf.apache.org/xmlns/features/v1.3.0"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://karaf.apache.org/xmlns/features/v1.3.0 http://karaf.apache.org/xmlns/features/v1.3.0">
     <repository>mvn:org.apache.cxf.karaf/apache-cxf/3.1.9/xml/features</repository>
 
     <feature name="task-deps">
         <feature>transaction</feature>
         <feature>cxf</feature>
+        <feature>scr</feature>
         <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.commons-dbcp/1.4_3</bundle>
         <bundle>mvn:commons-pool/commons-pool/1.5.4</bundle>
         <bundle>wrap:mvn:postgresql/postgresql/9.1-901-1.jdbc4</bundle>

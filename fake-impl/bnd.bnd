@@ -1,4 +1,0 @@
-Import-Package: !javax.inject,\
-    !org.ops4j.pax.cdi.api,\
-    *
--plugin.spring: aQute.lib.spring.SpringXMLType

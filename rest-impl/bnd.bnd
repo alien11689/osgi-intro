@@ -1,8 +1,0 @@
-Import-Package: !javax.inject,\
-    !org.ops4j.pax.cdi.api,\
-    !javax.enterprise.inject,\
-    !org.apache.aries.blueprint.annotation.config,\
-    *
--plugin.spring: aQute.lib.spring.SpringXMLType
-Bundle-Blueprint: OSGI-INF/blueprint/autowire.xml,OSGI-INF/blueprint/blu
- eprint.xml

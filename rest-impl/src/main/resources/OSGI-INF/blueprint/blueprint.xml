@@ -16,7 +16,7 @@
 
     <jaxrs:server id="taskServer" address="/tasks">
         <jaxrs:serviceBeans>
-            <ref component-id="taskService" />
+            <ref component-id="taskService"/>
         </jaxrs:serviceBeans>
     </jaxrs:server>
 

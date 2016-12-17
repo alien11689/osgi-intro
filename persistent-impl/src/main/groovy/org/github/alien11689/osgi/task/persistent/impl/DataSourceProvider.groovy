@@ -15,10 +15,10 @@ class DataSourceProvider {
 
     @Produces
     DataSource pgDataSource(
-        @ConfigProperty('${db.url}') String url,
-        @ConfigProperty('${db.user}') String user,
-        @ConfigProperty('${db.password}') String password
-        ){
+            @ConfigProperty('${db.url}') String url,
+            @ConfigProperty('${db.user}') String user,
+            @ConfigProperty('${db.password}') String password
+    ) {
         new BasicDataSource(
                 driverClassName: Driver.class.name,
                 username: user,
