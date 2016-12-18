@@ -1,5 +1,6 @@
 package org.github.alien11689.osgi.task.rest.impl;
 
+import aQute.bnd.annotation.headers.RequireCapability;
 import org.github.alien11689.osgi.task.api.TaskRepository;
 import org.github.alien11689.osgi.task.rest.impl.jaxb.Task;
 import org.github.alien11689.osgi.task.rest.impl.jaxb.Tasks;
@@ -16,6 +17,7 @@ import java.util.stream.Collectors;
 @Path("/")
 @Produces("application/xml")
 @Singleton
+@RequireCapability(ns = "osgi.extender", filter = "(&(osgi.extender=osgi.blueprint)(version>=1.0)(!(version>=2.0)))")
 public class TaskService {
 
     private final TaskRepository taskRepository;

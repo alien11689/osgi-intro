@@ -33,6 +33,7 @@
         <postgresql.version>9.1-901-1.jdbc4</postgresql.version>
         <groovy-all.version>2.4.7</groovy-all.version>
         <org.osgi.service.component.annotations.version>1.3.0</org.osgi.service.component.annotations.version>
+        <biz.aQute.bnd.annotation.version>3.3.0</biz.aQute.bnd.annotation.version>
     </properties>
 
     <dependencyManagement>
@@ -91,6 +92,11 @@
                 <groupId>org.osgi</groupId>
                 <artifactId>org.osgi.service.component.annotations</artifactId>
                 <version>${org.osgi.service.component.annotations.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>biz.aQute.bnd</groupId>
+                <artifactId>biz.aQute.bnd.annotation</artifactId>
+                <version>${biz.aQute.bnd.annotation.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

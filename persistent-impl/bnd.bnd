@@ -1,1 +1,3 @@
 Task-Implementation: persistent
+Require-Capability: osgi.extender;\
+ filter:="(&(osgi.extender=osgi.blueprint)(version>=1.0)(!(version>=2.0)))"
