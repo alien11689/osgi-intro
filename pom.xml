@@ -15,62 +15,82 @@
     </modules>
     <packaging>pom</packaging>
 
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven-compiler-plugin.version>3.6.0</maven-compiler-plugin.version>
+        <maven-bundle-plugin.version>3.0.1</maven-bundle-plugin.version>
+        <blueprint-maven-plugin.version>1.5.0</blueprint-maven-plugin.version>
+        <gmavenplus-plugin.version>1.5</gmavenplus-plugin.version>
+
+        <org.osgi.annotation.version>6.0.0</org.osgi.annotation.version>
+        <lombok.version>1.16.6</lombok.version>
+        <javax.ws.rs-api.version>2.0.1</javax.ws.rs-api.version>
+        <javax.inject.version>1</javax.inject.version>
+        <pax-cdi-api.version>0.8.0</pax-cdi-api.version>
+        <blueprint-maven-plugin-annotation.version>1.0.0</blueprint-maven-plugin-annotation.version>
+        <cdi-api.version>1.2</cdi-api.version>
+        <org.apache.servicemix.bundles.commons-dbcp.version>1.4_3</org.apache.servicemix.bundles.commons-dbcp.version>
+        <postgresql.version>9.1-901-1.jdbc4</postgresql.version>
+        <groovy-all.version>2.4.7</groovy-all.version>
+        <org.osgi.service.component.annotations.version>1.3.0</org.osgi.service.component.annotations.version>
+    </properties>
+
     <dependencyManagement>
         <dependencies>
             <dependency>
                 <groupId>org.osgi</groupId>
                 <artifactId>org.osgi.annotation</artifactId>
-                <version>6.0.0</version>
+                <version>${org.osgi.annotation.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.projectlombok</groupId>
                 <artifactId>lombok</artifactId>
-                <version>1.16.6</version>
+                <version>${lombok.version}</version>
             </dependency>
             <dependency>
                 <groupId>javax.ws.rs</groupId>
                 <artifactId>javax.ws.rs-api</artifactId>
-                <version>2.0.1</version>
+                <version>${javax.ws.rs-api.version}</version>
             </dependency>
             <dependency>
                 <groupId>javax.inject</groupId>
                 <artifactId>javax.inject</artifactId>
-                <version>1</version>
+                <version>${javax.inject.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.ops4j.pax.cdi</groupId>
                 <artifactId>pax-cdi-api</artifactId>
-                <version>0.8.0</version>
+                <version>${pax-cdi-api.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.apache.aries.blueprint</groupId>
                 <artifactId>blueprint-maven-plugin-annotation</artifactId>
-                <version>1.0.0</version>
+                <version>${blueprint-maven-plugin-annotation.version}</version>
             </dependency>
             <dependency>
                 <groupId>javax.enterprise</groupId>
                 <artifactId>cdi-api</artifactId>
-                <version>1.2</version>
+                <version>${cdi-api.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.apache.servicemix.bundles</groupId>
                 <artifactId>org.apache.servicemix.bundles.commons-dbcp</artifactId>
-                <version>1.4_3</version>
+                <version>${org.apache.servicemix.bundles.commons-dbcp.version}</version>
             </dependency>
             <dependency>
                 <groupId>postgresql</groupId>
                 <artifactId>postgresql</artifactId>
-                <version>9.1-901-1.jdbc4</version>
+                <version>${postgresql.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.codehaus.groovy</groupId>
                 <artifactId>groovy-all</artifactId>
-                <version>2.4.7</version>
+                <version>${groovy-all.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.osgi</groupId>
                 <artifactId>org.osgi.service.component.annotations</artifactId>
-                <version>1.3.0</version>
+                <version>${org.osgi.service.component.annotations.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
@@ -80,7 +100,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.6.0</version>
+                <version>${maven-compiler-plugin.version}</version>
                 <configuration>
                     <source>1.8</source>
                     <target>1.8</target>
@@ -89,7 +109,7 @@
             <plugin>
                 <groupId>org.apache.felix</groupId>
                 <artifactId>maven-bundle-plugin</artifactId>
-                <version>3.0.1</version>
+                <version>${maven-bundle-plugin.version}</version>
                 <extensions>true</extensions>
                 <configuration>
                     <instructions>
@@ -112,7 +132,7 @@
                 <plugin>
                     <groupId>org.apache.aries.blueprint</groupId>
                     <artifactId>blueprint-maven-plugin</artifactId>
-                    <version>1.5.0</version>
+                    <version>${blueprint-maven-plugin.version}</version>
                     <executions>
                         <execution>
                             <goals>
@@ -125,7 +145,7 @@
                 <plugin>
                     <groupId>org.codehaus.gmavenplus</groupId>
                     <artifactId>gmavenplus-plugin</artifactId>
-                    <version>1.5</version>
+                    <version>${gmavenplus-plugin.version}</version>
                     <executions>
                         <execution>
                             <goals>
