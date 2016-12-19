@@ -15,7 +15,7 @@ import java.util.concurrent.atomic.AtomicLong;
         service = TaskRepository.class,
         property = {
                 "type=fake",
-                "service.ranking=1"
+                "service.ranking:Integer=-100"
         })
 public class FakeTaskRepository implements TaskRepository {
     private final AtomicLong counter = new AtomicLong();

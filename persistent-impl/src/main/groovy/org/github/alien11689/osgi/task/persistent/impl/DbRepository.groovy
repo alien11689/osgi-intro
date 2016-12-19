@@ -16,7 +16,6 @@ import javax.sql.DataSource
 @OsgiServiceProvider(classes = [TaskRepository])
 @Properties([
         @Property(name = "type", value = "db"),
-        @Property(name = "service.ranking", value = "100"),
 ])
 class DbRepository implements TaskRepository {
 
