@@ -7,15 +7,17 @@
         <feature>transaction</feature>
         <feature>cxf</feature>
         <feature>scr</feature>
-        <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.commons-dbcp/1.4_3</bundle>
-        <bundle>mvn:commons-pool/commons-pool/1.5.4</bundle>
-        <bundle>wrap:mvn:postgresql/postgresql/9.1-901-1.jdbc4</bundle>
+        <feature>pax-jdbc-postgresql</feature>
+        <feature>pax-jdbc-pool-dbcp2</feature>
+        <feature>pax-jdbc-config</feature>
         <bundle>mvn:org.codehaus.groovy/groovy-all/2.4.7</bundle>
 
-        <config name="org.github.alien11689.osgi.task.persistentimpl">
-            db.user=postgres
-            db.password=admin
-            db.url=jdbc:postgresql://localhost:5432/task
+        <config name="org.ops4j.datasource-taskDS">
+            osgi.jdbc.driver.name=PostgreSQL JDBC Driver-pool-xa
+            databaseName=task
+            user=postgres
+            password=admin
+            dataSourceName=taskDS
         </config>
     </feature>
 </features>

@@ -9,7 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>org.github.alien11689.osgi.task.fake-impl</artifactId>
+    <artifactId>fake-impl</artifactId>
     <packaging>bundle</packaging>
 
     <dependencies>

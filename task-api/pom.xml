@@ -9,7 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>org.github.alien11689.osgi.task.api</artifactId>
+    <artifactId>task-api</artifactId>
     <packaging>bundle</packaging>
 
     <dependencies>

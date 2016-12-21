@@ -5,6 +5,7 @@ import groovy.sql.Sql
 import org.github.alien11689.osgi.task.api.Task
 import org.github.alien11689.osgi.task.api.TaskRepository
 import org.github.alien11689.osgi.task.spi.CreateTask
+import org.ops4j.pax.cdi.api.OsgiService
 import org.ops4j.pax.cdi.api.OsgiServiceProvider
 import org.ops4j.pax.cdi.api.Properties
 import org.ops4j.pax.cdi.api.Property
@@ -21,7 +22,7 @@ class DbRepository implements TaskRepository {
 
     private final Sql sql
 
-    DbRepository(DataSource dataSource) {
+    DbRepository(@OsgiService(filter = "(dataSourceName=taskDS)") DataSource dataSource) {
         this.sql = new Sql(dataSource)
     }
 

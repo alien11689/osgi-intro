@@ -4,3 +4,5 @@ db:
     - "5432:5432"
   environment:
     - POSTGRES_PASSWORD=admin
+  volumes:
+    - ./tasks.sql:/docker-entrypoint-initdb.d/10-init.sql
