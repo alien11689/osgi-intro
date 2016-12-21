@@ -64,16 +64,6 @@
                 <version>${pax-cdi-api.version}</version>
             </dependency>
             <dependency>
-                <groupId>org.apache.aries.blueprint</groupId>
-                <artifactId>blueprint-maven-plugin-annotation</artifactId>
-                <version>${blueprint-maven-plugin-annotation.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>javax.enterprise</groupId>
-                <artifactId>cdi-api</artifactId>
-                <version>${cdi-api.version}</version>
-            </dependency>
-            <dependency>
                 <groupId>org.apache.servicemix.bundles</groupId>
                 <artifactId>org.apache.servicemix.bundles.commons-dbcp</artifactId>
                 <version>${org.apache.servicemix.bundles.commons-dbcp.version}</version>

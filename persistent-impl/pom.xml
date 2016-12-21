@@ -30,10 +30,6 @@
             <groupId>org.ops4j.pax.cdi</groupId>
             <artifactId>pax-cdi-api</artifactId>
         </dependency>
-        <dependency>
-            <groupId>javax.enterprise</groupId>
-            <artifactId>cdi-api</artifactId>
-        </dependency>
     </dependencies>
 
     <build>
