@@ -123,8 +123,6 @@
                         <Import-Package>
                             !javax.inject,
                             !org.ops4j.pax.cdi.api,
-                            !javax.enterprise.inject,
-                            !org.apache.aries.blueprint.annotation.config,
                             *
                         </Import-Package>
                         <_removeheaders>Import-Service,Export-Service</_removeheaders>
