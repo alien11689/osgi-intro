@@ -17,7 +17,9 @@ import java.util.stream.Collectors;
 @Path("/")
 @Produces("application/xml")
 @Singleton
-@RequireCapability(ns = "osgi.extender", filter = "(&(osgi.extender=osgi.blueprint)(version>=1.0)(!(version>=2.0)))")
+@RequireCapability(
+        ns = "osgi.extender",
+        filter = "(&(osgi.extender=osgi.blueprint)(version>=1.0)(!(version>=2.0)))")
 public class TaskService {
 
     private final TaskRepository taskRepository;
