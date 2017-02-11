@@ -12,6 +12,7 @@
         <module>fake-impl</module>
         <module>persistent-impl</module>
         <module>rest-impl</module>
+        <module>ui</module>
     </modules>
     <packaging>pom</packaging>
 

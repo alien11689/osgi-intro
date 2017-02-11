@@ -18,6 +18,17 @@
         <jaxrs:serviceBeans>
             <ref component-id="taskService"/>
         </jaxrs:serviceBeans>
+        <jaxrs:providers>
+            <bean id="jaxbJSONProvider" class="org.apache.cxf.jaxrs.provider.json.JSONProvider">
+                <property name="dropRootElement" value="true"/>
+                <property name="dropCollectionWrapperElement" value="true"/>
+                <property name="serializeAsArray" value="true"/>
+                <property name="supportUnwrapped" value="true"/>
+            </bean>
+        </jaxrs:providers>
+        <jaxrs:extensionMappings>
+            <entry key="json" value="application/json"/>
+        </jaxrs:extensionMappings>
     </jaxrs:server>
 
 </blueprint>
