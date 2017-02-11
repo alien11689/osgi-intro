@@ -3,7 +3,7 @@
           xsi:schemaLocation="http://karaf.apache.org/xmlns/features/v1.3.0 http://karaf.apache.org/xmlns/features/v1.3.0">
     <repository>mvn:org.apache.cxf.karaf/apache-cxf/3.1.9/xml/features</repository>
 
-    <feature name="task-deps">
+    <feature name="tasks" version="${project.version}">
         <feature>transaction</feature>
         <feature>cxf</feature>
         <feature>cxf-jackson</feature>
@@ -12,7 +12,14 @@
         <feature>pax-jdbc-pool-dbcp2</feature>
         <feature>pax-jdbc-config</feature>
         <feature>war</feature>
-        <bundle>mvn:org.codehaus.groovy/groovy-all/2.4.7</bundle>
+
+        <bundle>mvn:org.codehaus.groovy/groovy-all/${groovy-all.version}</bundle>
+
+        <bundle>mvn:org.github.alien11689.osgi.task/ui/${project.version}</bundle>
+        <bundle>mvn:org.github.alien11689.osgi.task/task-api/${project.version}</bundle>
+        <bundle>mvn:org.github.alien11689.osgi.task/rest-impl/${project.version}</bundle>
+        <bundle>mvn:org.github.alien11689.osgi.task/persistent-impl/${project.version}</bundle>
+        <bundle start="false">mvn:org.github.alien11689.osgi.task/fake-impl/${project.version}</bundle>
 
         <config name="org.ops4j.datasource-taskDS">
             osgi.jdbc.driver.name=PostgreSQL JDBC Driver-pool-xa
@@ -20,6 +27,9 @@
             user=postgres
             password=admin
             dataSourceName=taskDS
+        </config>
+        <config name="org.apache.cxf.osgi">
+            org.apache.cxf.servlet.context=/rest
         </config>
     </feature>
 </features>

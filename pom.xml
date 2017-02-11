@@ -13,6 +13,8 @@
         <module>persistent-impl</module>
         <module>rest-impl</module>
         <module>ui</module>
+        <module>task-feature</module>
+        <module>task-karaf</module>
     </modules>
     <packaging>pom</packaging>
 
