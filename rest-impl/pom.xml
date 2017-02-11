@@ -15,7 +15,7 @@
     <dependencies>
         <dependency>
             <groupId>org.github.alien11689.osgi.task</groupId>
-            <artifactId>org.github.alien11689.osgi.task.api</artifactId>
+            <artifactId>task-api</artifactId>
             <version>1.0.0-SNAPSHOT</version>
         </dependency>
         <dependency>

@@ -29,8 +29,6 @@
         <pax-cdi-api.version>0.8.0</pax-cdi-api.version>
         <blueprint-maven-plugin-annotation.version>1.0.0</blueprint-maven-plugin-annotation.version>
         <cdi-api.version>1.2</cdi-api.version>
-        <org.apache.servicemix.bundles.commons-dbcp.version>1.4_3</org.apache.servicemix.bundles.commons-dbcp.version>
-        <postgresql.version>9.1-901-1.jdbc4</postgresql.version>
         <groovy-all.version>2.4.7</groovy-all.version>
         <org.osgi.service.component.annotations.version>1.3.0</org.osgi.service.component.annotations.version>
         <biz.aQute.bnd.annotation.version>3.3.0</biz.aQute.bnd.annotation.version>
@@ -62,16 +60,6 @@
                 <groupId>org.ops4j.pax.cdi</groupId>
                 <artifactId>pax-cdi-api</artifactId>
                 <version>${pax-cdi-api.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.apache.servicemix.bundles</groupId>
-                <artifactId>org.apache.servicemix.bundles.commons-dbcp</artifactId>
-                <version>${org.apache.servicemix.bundles.commons-dbcp.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>postgresql</groupId>
-                <artifactId>postgresql</artifactId>
-                <version>${postgresql.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.codehaus.groovy</groupId>
