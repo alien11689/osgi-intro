@@ -96,7 +96,7 @@
                 <configuration>
                     <bootFeatures>
                         <feature>standard</feature>
-                        <feature>tasks</feature>
+                        <feature>task-app</feature>
                     </bootFeatures>
                 </configuration>
             </plugin>

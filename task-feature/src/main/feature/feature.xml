@@ -1,25 +1,31 @@
-<features name="tasks" xmlns="http://karaf.apache.org/xmlns/features/v1.3.0"
+<features name="org.github.alien11689.osgi.tasks" xmlns="http://karaf.apache.org/xmlns/features/v1.3.0"
           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
           xsi:schemaLocation="http://karaf.apache.org/xmlns/features/v1.3.0 http://karaf.apache.org/xmlns/features/v1.3.0">
     <repository>mvn:org.apache.cxf.karaf/apache-cxf/3.1.9/xml/features</repository>
 
-    <feature name="tasks" version="${project.version}">
-        <feature>transaction</feature>
-        <feature>cxf</feature>
-        <feature>cxf-jackson</feature>
+    <feature name="task-api" version="${project.version}">
+        <bundle>mvn:org.github.alien11689.osgi.task/task-api/${project.version}</bundle>
+    </feature>
+
+    <feature name="task-fake-repo" version="${project.version}">
         <feature>scr</feature>
+
+        <feature>task-api</feature>
+
+        <bundle start="false">mvn:org.github.alien11689.osgi.task/fake-impl/${project.version}</bundle>
+    </feature>
+
+    <feature name="task-postgres-repo" version="${project.version}">
+        <feature>transaction</feature>
         <feature>pax-jdbc-postgresql</feature>
         <feature>pax-jdbc-pool-dbcp2</feature>
         <feature>pax-jdbc-config</feature>
-        <feature>war</feature>
+
+        <feature>task-api</feature>
 
         <bundle>mvn:org.codehaus.groovy/groovy-all/${groovy-all.version}</bundle>
 
-        <bundle>mvn:org.github.alien11689.osgi.task/ui/${project.version}</bundle>
-        <bundle>mvn:org.github.alien11689.osgi.task/task-api/${project.version}</bundle>
-        <bundle>mvn:org.github.alien11689.osgi.task/rest-impl/${project.version}</bundle>
         <bundle>mvn:org.github.alien11689.osgi.task/persistent-impl/${project.version}</bundle>
-        <bundle start="false">mvn:org.github.alien11689.osgi.task/fake-impl/${project.version}</bundle>
 
         <config name="org.ops4j.datasource-taskDS">
             osgi.jdbc.driver.name=PostgreSQL JDBC Driver-pool-xa
@@ -28,8 +34,32 @@
             password=admin
             dataSourceName=taskDS
         </config>
+    </feature>
+
+    <feature name="task-rest" version="${project.version}">
+        <feature>cxf</feature>
+        <feature>cxf-jackson</feature>
+
+        <feature>task-postgres-repo</feature>
+
+        <bundle>mvn:org.github.alien11689.osgi.task/rest-impl/${project.version}</bundle>
+
         <config name="org.apache.cxf.osgi">
             org.apache.cxf.servlet.context=/rest
         </config>
+    </feature>
+
+    <feature name="task-ui" version="${project.version}">
+        <feature>war</feature>
+        <feature>task-rest</feature>
+
+        <bundle>mvn:org.github.alien11689.osgi.task/ui/${project.version}</bundle>
+    </feature>
+
+
+    <feature name="task-app" version="${project.version}">
+        <feature>task-ui</feature>
+        <feature>task-fake-repo</feature>
+
     </feature>
 </features>
