@@ -1,8 +1,8 @@
 package org.github.alien11689.osgi.task.fake.impl;
 
-import org.github.alien11689.osgi.task.api.Task;
-import org.github.alien11689.osgi.task.api.TaskRepository;
-import org.github.alien11689.osgi.task.spi.CreateTask;
+import org.github.alien11689.osgi.task.repository.api.Task;
+import org.github.alien11689.osgi.task.repository.api.TaskRepository;
+import org.github.alien11689.osgi.task.repository.api.CreateTask;
 import org.osgi.service.component.annotations.Component;
 
 import java.util.ArrayList;
@@ -24,12 +24,12 @@ public class FakeTaskRepository implements TaskRepository {
     @Override
     public long addTask(CreateTask createTask) {
         long id = counter.incrementAndGet();
-        tasks.add(new InternalTask(id, createTask.getName(), createTask.getDescription()));
+        tasks.add(new Task(id, createTask.getName(), createTask.getDescription()));
         return id;
     }
 
     @Override
-    public Collection<Task> findAll() {
+    public Collection<Task> fetchAll() {
         return tasks;
     }
 }

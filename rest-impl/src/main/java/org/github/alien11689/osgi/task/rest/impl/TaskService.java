@@ -1,7 +1,9 @@
 package org.github.alien11689.osgi.task.rest.impl;
 
 import aQute.bnd.annotation.headers.RequireCapability;
-import org.github.alien11689.osgi.task.api.TaskRepository;
+import org.github.alien11689.osgi.task.repository.api.CreateTask;
+import org.github.alien11689.osgi.task.repository.api.TaskRepository;
+import org.github.alien11689.osgi.task.rest.impl.exception.TaskNotFound;
 import org.github.alien11689.osgi.task.rest.impl.jaxb.Task;
 import org.github.alien11689.osgi.task.rest.impl.jaxb.Tasks;
 import org.ops4j.pax.cdi.api.OsgiService;
@@ -38,14 +40,14 @@ public class TaskService {
     @GET
     public Tasks getTasks() {
         Tasks tasks = new Tasks();
-        tasks.setTasks(taskRepository.findAll().stream().map(Task::fromRepo).collect(Collectors.toList()));
+        tasks.setTasks(taskRepository.fetchAll().stream().map(Task::fromRepo).collect(Collectors.toList()));
         return tasks;
     }
 
     @GET
     @Path(value = "{id}")
     public Task getTask(@PathParam("id") long id) throws Throwable {
-        return taskRepository.findAll()
+        return taskRepository.fetchAll()
                 .stream()
                 .filter(t -> t.getId() == id)
                 .findFirst()
@@ -57,10 +59,7 @@ public class TaskService {
 
     @POST
     public Response addTask(@QueryParam("name") String name, @QueryParam("description") String description, @Context UriInfo uriInfo) {
-        Task task = new Task();
-        task.setDescription(description);
-        task.setName(name);
-        long id = taskRepository.addTask(task);
+        long id = taskRepository.addTask(new CreateTask(name, description));
         return Response.created(uriInfo.getBaseUriBuilder().path(String.valueOf(id)).build()).build();
     }
 }

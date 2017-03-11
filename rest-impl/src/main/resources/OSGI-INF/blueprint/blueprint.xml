@@ -25,6 +25,7 @@
                 <property name="serializeAsArray" value="true"/>
                 <property name="supportUnwrapped" value="true"/>
             </bean>
+            <ref component-id="repositoryExceptionMapper"/>
         </jaxrs:providers>
         <jaxrs:extensionMappings>
             <entry key="json" value="application/json"/>

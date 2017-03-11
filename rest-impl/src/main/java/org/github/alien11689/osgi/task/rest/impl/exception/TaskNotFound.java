@@ -1,4 +1,4 @@
-package org.github.alien11689.osgi.task.rest.impl;
+package org.github.alien11689.osgi.task.rest.impl.exception;
 
 import javax.ws.rs.WebApplicationException;
 import javax.ws.rs.core.Response;

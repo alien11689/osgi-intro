@@ -3,14 +3,14 @@
           xsi:schemaLocation="http://karaf.apache.org/xmlns/features/v1.3.0 http://karaf.apache.org/xmlns/features/v1.3.0">
     <repository>mvn:org.apache.cxf.karaf/apache-cxf/3.1.9/xml/features</repository>
 
-    <feature name="task-api" version="${project.version}">
-        <bundle>mvn:org.github.alien11689.osgi.task/task-api/${project.version}</bundle>
+    <feature name="repository-api" version="${project.version}">
+        <bundle>mvn:org.github.alien11689.osgi.task/repository-api/${project.version}</bundle>
     </feature>
 
     <feature name="task-fake-repo" version="${project.version}">
         <feature>scr</feature>
 
-        <feature>task-api</feature>
+        <feature>repository-api</feature>
 
         <bundle start="false">mvn:org.github.alien11689.osgi.task/fake-impl/${project.version}</bundle>
     </feature>
@@ -21,7 +21,7 @@
         <feature>pax-jdbc-pool-dbcp2</feature>
         <feature>pax-jdbc-config</feature>
 
-        <feature>task-api</feature>
+        <feature>repository-api</feature>
 
         <bundle>mvn:org.codehaus.groovy/groovy-all/${groovy-all.version}</bundle>
 
