@@ -60,6 +60,6 @@
     <feature name="task-app" version="${project.version}">
         <feature>task-ui</feature>
         <feature>task-fake-repo</feature>
-
+        <feature>webconsole</feature>
     </feature>
 </features>
