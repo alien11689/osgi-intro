@@ -12,10 +12,6 @@
     <artifactId>task-karaf</artifactId>
     <packaging>karaf-assembly</packaging>
 
-    <properties>
-        <karaf.version>4.0.8</karaf.version>
-    </properties>
-
     <dependencies>
         <!-- scope is compile so all features (there is only one) are installed into startup.properties and the feature repo itself is not added in etc/org.apache.karaf.features.cfg file -->
         <dependency>

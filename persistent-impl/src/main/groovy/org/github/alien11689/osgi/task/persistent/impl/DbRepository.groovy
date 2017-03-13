@@ -2,6 +2,9 @@ package org.github.alien11689.osgi.task.persistent.impl
 
 import groovy.sql.GroovyRowResult
 import groovy.sql.Sql
+import org.apache.aries.blueprint.annotation.config.Config
+import org.apache.aries.blueprint.annotation.config.ConfigProperty
+import org.apache.aries.blueprint.annotation.config.DefaultProperty
 import org.github.alien11689.osgi.task.repository.api.CreateTask
 import org.github.alien11689.osgi.task.repository.api.RepositoryFailed
 import org.github.alien11689.osgi.task.repository.api.Task
@@ -18,13 +21,27 @@ import java.sql.SQLException
 @Singleton
 @OsgiServiceProvider(classes = [TaskRepository])
 @Properties([
-        @Property(name = "type", value = "db"),
+        @Property(name = 'type', value = 'db'),
 ])
+@Config(pid = 'org.github.alien11689.osgi.task.persistent.impl',
+        defaults = [
+                @DefaultProperty(key = 'error.cannotPersist', value = 'Cannot persist task'),
+                @DefaultProperty(key = 'error.cannotFetch', value = 'Cannot fetch task'),
+        ]
+)
 class DbRepository implements TaskRepository {
 
     private final Sql sql
+    private final String cannotPersistMessage
+    private final String cannotFetchMessage
 
-    DbRepository(@OsgiService(filter = "(dataSourceName=taskDS)") DataSource dataSource) {
+    DbRepository(
+            @OsgiService(filter = '(dataSourceName=taskDS)') DataSource dataSource,
+            @ConfigProperty('${error.cannotPersist}') String cannotPersistMessage,
+            @ConfigProperty('${error.cannotFetch}') String cannotFetchMessage
+    ) {
+        this.cannotFetchMessage = cannotFetchMessage
+        this.cannotPersistMessage = cannotPersistMessage
         this.sql = new Sql(dataSource)
     }
 
@@ -40,7 +57,7 @@ class DbRepository implements TaskRepository {
             }
             return id
         } catch (SQLException e) {
-            throw new RepositoryFailed("Cannot persist task", e)
+            throw new RepositoryFailed(cannotPersistMessage, e)
         }
     }
 
@@ -55,7 +72,7 @@ class DbRepository implements TaskRepository {
                 ) as Task
             }
         } catch (SQLException e) {
-            throw new RepositoryFailed("Cannot fetch tasks", e)
+            throw new RepositoryFailed(cannotFetchMessage, e)
         }
     }
 }

@@ -34,6 +34,10 @@
             <groupId>biz.aQute.bnd</groupId>
             <artifactId>biz.aQute.bnd.annotation</artifactId>
         </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+        </dependency>
     </dependencies>
 
     <build>
@@ -41,11 +45,6 @@
             <plugin>
                 <groupId>org.apache.aries.blueprint</groupId>
                 <artifactId>blueprint-maven-plugin</artifactId>
-                <configuration>
-                    <scanPaths>
-                        <scanPath>org.github.alien11689.osgi.task.rest</scanPath>
-                    </scanPaths>
-                </configuration>
             </plugin>
         </plugins>
     </build>

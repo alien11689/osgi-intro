@@ -10,6 +10,7 @@ import java.util.Collection;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicLong;
 
+
 @Component(
         immediate = true,
         service = TaskRepository.class,
