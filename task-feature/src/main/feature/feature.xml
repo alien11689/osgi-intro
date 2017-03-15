@@ -28,7 +28,9 @@
         <bundle>mvn:org.github.alien11689.osgi.task/persistent-impl/${project.version}</bundle>
 
         <config name="org.ops4j.datasource-taskDS">
-            osgi.jdbc.driver.name=PostgreSQL JDBC Driver-pool-xa
+            osgi.jdbc.driver.name=PostgreSQL JDBC Driver
+            pool=dbcp2
+            xa=true
             databaseName=task
             user=postgres
             password=admin
