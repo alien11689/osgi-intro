@@ -12,6 +12,8 @@
     <artifactId>persistent-impl</artifactId>
     <packaging>bundle</packaging>
 
+    <name>OSGi Intro :: Task :: ${project.artifactId}</name>
+
     <dependencies>
         <dependency>
             <groupId>org.github.alien11689.osgi.task</groupId>
