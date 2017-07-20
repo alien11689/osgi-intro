@@ -1,3 +1,7 @@
 Task-Implementation: persistent
 Require-Capability: osgi.extender;\
  filter:="(&(osgi.extender=osgi.blueprint)(version>=1.0)(!(version>=2.0)))"
+Import-Package: !javax.inject,\
+ !org.ops4j.pax.cdi.api,\
+ !org.apache.aries.blueprint.annotation*,\
+ *

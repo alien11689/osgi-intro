@@ -1,0 +1,4 @@
+Import-Package: !javax.inject,\
+ !org.ops4j.pax.cdi.api,\
+ !org.apache.aries.blueprint.annotation*,\
+ *
