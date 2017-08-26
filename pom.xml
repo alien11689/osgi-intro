@@ -22,7 +22,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven-compiler-plugin.version>3.6.0</maven-compiler-plugin.version>
         <maven-bundle-plugin.version>3.2.0</maven-bundle-plugin.version>
-        <blueprint-maven-plugin.version>1.6.0</blueprint-maven-plugin.version>
+        <blueprint-maven-plugin.version>1.8.0</blueprint-maven-plugin.version>
         <gmavenplus-plugin.version>1.5</gmavenplus-plugin.version>
         <karaf.version>4.1.0</karaf.version>
 
@@ -156,6 +156,9 @@
                             </goals>
                         </execution>
                     </executions>
+                    <configuration>
+                        <baseDir>${project.build.outputDirectory}</baseDir>
+                    </configuration>
                 </plugin>
                 <plugin>
                     <groupId>org.codehaus.gmavenplus</groupId>
